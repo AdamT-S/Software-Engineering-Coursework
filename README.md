@@ -1,4 +1,4 @@
-# Welcome to our Group5 Web App project
+# Welcome to our Group1 Web App project
 
 Let us slightly introduce project and files workflow... :blush:
 
