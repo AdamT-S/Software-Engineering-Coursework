@@ -1,5 +1,6 @@
 CODE OF CONDUCT
 As a member of this group, you agree to the terms and conditions set out by this code of conduct. The below sets out all rules that have been agreed upon by the group. If you break three or five minor policy violations you commit, you must throw a pizza party for the rest of the group.
+
 Purpose
 This code of conduct ensures the correct behaviour that you will adhere to and sets out the expectation for your behaviour in a professional environment. You must strictly follow the code of conduct not only set out by this document, but by the university too.
 
