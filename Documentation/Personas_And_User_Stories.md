@@ -1,17 +1,7 @@
 # Data Analyst
 ## Persona
-**Name:** Sebastian Drake
+![image](https://github.com/AdamT-S/Software-Engineering-Coursework/assets/158591813/6838ac49-635e-43eb-ad9b-d942ce907e1d)
 
-**Background:** Has a data science degree and experience in analysing geographic data. Identifies trends and relationships from data. 
-
-**Goals:** Generate accurate reports on populations for analysis. 
-
-**Pain points:** Cannot find software that allows customisation on filtering.
-## User Story
-* As a user, I want to generate reports regarding the populations of continents, regions, countries, cities, and districts.
-* As a user, I want to be able to filter reports for my specific needs.
-* As a user, I want to be able to customise my reports by any number I need
-* As a user, I want to be able to share generated reports with my team.
 # Admin
 ## Persona 
 **Name:** Lucy Donovan
