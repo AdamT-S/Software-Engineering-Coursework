@@ -36,6 +36,7 @@ Meetings with the group will be held on Discord at these following times:
 - Sundays, 7PM: Progress review and task allocations
 - Wednesdays, 8PM: Progress review
 - Fridays, 8PM: Progress review
+
 These are subject to change and additional meetings can also take place. You should check the Discord for any unexpected updates or meetings taking place.
 
 ### :mortar_board: Signed document:
