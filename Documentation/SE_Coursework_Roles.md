@@ -12,7 +12,7 @@
 -   Rhaishah Goorye
 -   Maciej Madejsza
 
-##Sprint 3
+## Sprint 3
 
 ### Product owner:
 
