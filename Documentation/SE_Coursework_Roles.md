@@ -1,3 +1,4 @@
+## Sprint 1
 ### Product owner:
 
 -   Adam Toms-Sheridan
@@ -12,6 +13,24 @@
 -   Rhaishah Goorye
 -   Maciej Madejsza
 
+
+## Sprint 2
+### Product owner:
+
+-   Adam Toms-Sheridan
+
+### Scrum Master:
+
+-   Adam Toms-Sheridan
+
+### Members:
+
+-   Unais Qureshi
+-   Rhaishah Goorye
+-   Maciej Madejsza
+-   Athena Parsa
+
+   
 ## Sprint 3
 
 ### Product owner:
