@@ -33,12 +33,11 @@ This code of conduct ensures the correct behaviour that you will adhere to and s
 
 ### Meetings
 Meetings with the group will be held on Discord at these following times:
-- Sundays, 7PM: Progress review and task allocations
-- Wednesdays, 8PM: Progress review
+- Sundays, 8PM: Progress review and task allocations
+- Wednesdays, 9:30PM: Progress review
 - Fridays, 8PM: Progress review
 
 These are subject to change and additional meetings can also take place. You should check the Discord for any unexpected updates or meetings taking place.
 
 ### :mortar_board: Signed document:
-
-![secodeofconductv4](https://github.com/AdamT-S/Software-Engineering-Coursework/assets/94644679/fee32f89-865c-4896-84d6-0dddfddae1ee)
+![secodeofconductv5](https://github.com/AdamT-S/Software-Engineering-Coursework/assets/94644679/c764c505-f358-4f7e-a32d-804d82897faa)
