@@ -16,15 +16,15 @@ body {
 		'visual visual visual visual'
 		'data data data data'
 		'footer footer footer footer';
-	/* background-color: var(--second-color); */
-}
-.logo {
 	background-color: var(--second-color);
+}
+/* Logo */
+.logo {
 	grid-area: logo;
 	text-align: center;
 	line-height: 10vh;
 }
-
+/* Navigation */
 .nav_bar {
 	grid-area: nav;
 	display: flex;
@@ -61,6 +61,7 @@ body {
 .nav_item a:hover {
 	text-shadow: 2px 2px 8px white;
 }
+/* Sections */
 section {
 	padding: 10px;
 }
@@ -68,11 +69,10 @@ section ul li {
 	padding: 5px 10px;
 	list-style: none;
 }
-
+/* Graph Section */
 .graph {
 	background-color: var(--first-color);
 	grid-area: visual;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -96,6 +96,8 @@ header {
 	margin-right: 10px;
 }
 
+/* Data Section */
+
 .data {
 	background-color: var(--second-color);
 	grid-area: data;
@@ -104,10 +106,7 @@ header {
 .data_container {
 	height: 100%;
 	display: grid;
-	grid-template-columns: minmax(auto, 150px) minmax(auto, 150px) 1fr 1fr 1fr minmax(auto, 150px) minmax(
-			auto,
-			150px
-		);
+	grid-template-columns: repeat(7, minmax(auto, 150px));
 	grid-template-rows: auto 2em 1fr 2em;
 	grid-template-areas:
 		'header header header header header header header' 'topDropL . . . . . topDropR'
@@ -119,9 +118,6 @@ header {
 	text-align: center;
 }
 
-.data_container li input {
-	width: 100%;
-}
 .data_droplist,
 .data_btn {
 	padding: 5px 10px;
@@ -134,7 +130,6 @@ header {
 	position: absolute;
 	top: 100%;
 	width: 100%;
-	background-color: white;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -143,7 +138,7 @@ header {
 	background-color: var(--second-color);
 }
 .data_droplist ul li:hover {
-	background-color: #f0f0f0;
+	background-color: rgba(0, 0, 0, 0.05);
 }
 
 .data_droplist:nth-child(2) {
@@ -152,8 +147,35 @@ header {
 .data_droplist:nth-child(3) {
 	grid-area: topDropR;
 }
-.data_table {
+.data_tableDiv {
 	grid-area: table;
+	padding: 10px;
+}
+.data_table {
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+}
+.data_table * {
+	height: 2em;
+	line-height: 2em;
+}
+.data_table tr + tr:hover {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.data_table tr:first-child {
+	border-bottom: 1px solid #999;
+}
+.data_table tr:nth-child(2n + 2) {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+.data_table tr *:first-child {
+	max-width: 30px;
+	text-align: center;
+}
+.data_table tr *:last-child {
+	max-width: 50px;
+	text-align: right;
 }
 .data_droplist:nth-child(5) {
 	grid-area: bottomDropL;
