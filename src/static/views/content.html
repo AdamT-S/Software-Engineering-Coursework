@@ -81,9 +81,24 @@
 				</header>
 				<div class="graph_content">[Content]</div>
 				<div class="graph_filters">
-					<div class="graph_filter">Continents</div>
-					<div class="graph_filter">Countries</div>
-					<div class="graph_filter">Cities</div>
+					<div class="graph_filter">
+						<input
+							type="checkbox"
+							name="continentsCheckbox"
+							id="" />Continents
+					</div>
+					<div class="graph_filter">
+						<input
+							type="checkbox"
+							name="countriesCheckbox"
+							id="" />Countries
+					</div>
+					<div class="graph_filter">
+						<input
+							type="checkbox"
+							name="citiesCheckbox"
+							id="" />Cities
+					</div>
 				</div>
 			</section>
 			<section class="data">
@@ -117,7 +132,35 @@
 								class="data_filter" />
 						</li>
 					</ul>
-					<div class="data_table"></div>
+					<div class="data_table">
+						<table>
+							<tr>
+								<th>Code</th>
+								<th>City</th>
+								<th>Population</th>
+							</tr>
+							<tr>
+								<th>dCode1</th>
+								<th>dCity1</th>
+								<th>dPopulation1</th>
+							</tr>
+							<tr>
+								<th>dCode2</th>
+								<th>dCity2</th>
+								<th>dPopulation2</th>
+							</tr>
+							<tr>
+								<th>dCode2</th>
+								<th>dCity2</th>
+								<th>dPopulation2</th>
+							</tr>
+							<tr>
+								<th>dCode2</th>
+								<th>dCity2</th>
+								<th>dPopulation2</th>
+							</tr>
+						</table>
+					</div>
 					<ul class="data_droplist">
 						Export
 						<li class="data_li">JPEG</li>

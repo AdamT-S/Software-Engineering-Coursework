@@ -10,7 +10,7 @@ body {
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: repeat(4, minmax(100px, 1fr));
-	grid-template-rows: 10vh minmax(auto, 35vh) 35vh 20vh;
+	grid-template-rows: 10vh minmax(auto, 80vh) 80vh 20vh;
 	grid-template-areas:
 		'logo . nav nav'
 		'visual visual visual visual'
@@ -45,9 +45,7 @@ body {
 	width: 60%;
 }
 .nav_search {
-	display: block;
 	width: 100%;
-	list-style: none;
 	text-align: left;
 }
 
@@ -67,7 +65,31 @@ body {
 .graph {
 	background-color: var(--first-color);
 	grid-area: visual;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
 }
+.graph header {
+	font-size: 3rem;
+	margin: 10px 0;
+}
+.graph_content {
+	flex-basis: 80%;
+}
+.graph_filters {
+	align-self: flex-start;
+	font-weight: bold;
+}
+.graph_filter {
+	padding: 5px 10px;
+}
+.graph_filter input {
+	margin-right: 10px;
+}
+
 .data {
 	background-color: var(--second-color);
 	grid-area: data;
