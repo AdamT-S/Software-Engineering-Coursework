@@ -23,6 +23,7 @@ body {
 	grid-area: logo;
 	text-align: center;
 	line-height: 10vh;
+	font-weight: bold;
 }
 /* Navigation */
 .nav_bar {
@@ -40,6 +41,7 @@ body {
 	align-items: center;
 	background-color: var(--first-color);
 	list-style: none;
+	border-radius: 5px;
 }
 .nav_item:nth-child(1) {
 	width: 60%;
@@ -56,6 +58,8 @@ body {
 	list-style: none;
 	text-align: center;
 	text-decoration: none;
+	font-weight: bold;
+	color: black;
 	transition: 0.3s ease-in-out;
 }
 .nav_item a:hover {
@@ -122,6 +126,10 @@ header {
 .data_btn {
 	padding: 5px 10px;
 	position: relative;
+	background-color: var(--first-color);
+	text-align: center;
+	font-weight: bold;
+	border-radius: 5px;
 }
 .data_droplist ul {
 	max-height: 0;
@@ -129,8 +137,19 @@ header {
 	transition: max-height 0.3s ease-in-out;
 	position: absolute;
 	top: 100%;
+	left: 0;
 	width: 100%;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.data_droplist ul input {
+	width: 90%;
+	border: 1px solid #999;
+	border-radius: 5px;
+	padding-left: 5px;
+}
+.data_droplist ul input:focus {
+	outline: none;
+	box-shadow: 0 2px 8px var(--first-color);
 }
 
 .data_droplist:hover ul {
@@ -153,6 +172,7 @@ header {
 }
 .data_table {
 	width: 100%;
+	margin-top: 3em;
 	text-align: left;
 	border-collapse: collapse;
 }
