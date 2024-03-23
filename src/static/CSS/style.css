@@ -1,3 +1,8 @@
+:root {
+	--first-color: #886ef2;
+	--second-color: #d7d1fb;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -8,4 +13,9 @@ html {
 	font-family: 'Montserrat', sans-serif;
 	color: #222;
 	font-size: 10px;
+}
+
+nav {
+	height: 10vh;
+	background-color: var(--second-color);
 }
