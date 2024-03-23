@@ -1,3 +1,78 @@
-main {
+:root {
+	--first-color: #ab9bec;
+	--second-color: #d7d1fb;
+}
+body {
 	font-size: 1.6rem;
+}
+.wrapper {
+	max-width: 1920px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(100px, 1fr));
+	grid-template-rows: 10vh minmax(auto, 35vh) 35vh 20vh;
+	grid-template-areas:
+		'logo . nav nav'
+		'visual visual visual visual'
+		'data data data data'
+		'footer footer footer footer';
+	/* background-color: var(--second-color); */
+}
+.logo {
+	background-color: var(--second-color);
+	grid-area: logo;
+	text-align: center;
+	line-height: 10vh;
+}
+
+.nav_bar {
+	grid-area: nav;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--second-color);
+}
+.nav_bar ul {
+	height: 30px;
+	width: 95%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--first-color);
+	list-style: none;
+}
+.nav_item:nth-child(1) {
+	width: 60%;
+}
+.nav_search {
+	display: block;
+	width: 100%;
+	list-style: none;
+	text-align: left;
+}
+
+.nav_item a {
+	width: 100px;
+	padding: 0px 10px;
+	display: block;
+	list-style: none;
+	text-align: center;
+	text-decoration: none;
+	transition: 0.3s ease-in-out;
+}
+.nav_item a:hover {
+	text-shadow: 2px 2px 8px white;
+}
+
+.graph {
+	background-color: var(--first-color);
+	grid-area: visual;
+}
+.data {
+	background-color: var(--second-color);
+	grid-area: data;
+}
+footer {
+	background-color: var(--first-color);
+	grid-area: footer;
 }
