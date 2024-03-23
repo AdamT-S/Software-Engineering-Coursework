@@ -69,6 +69,10 @@ body {
 section {
 	margin-top: 10px;
 }
+section ul {
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
 section ul li {
 	padding: 5px 10px;
 	list-style: none;
@@ -150,6 +154,7 @@ section header {
 	top: 100%;
 	left: 0;
 	width: 100%;
+	font-weight: normal;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 .data_droplist ul input {
@@ -162,7 +167,10 @@ section header {
 	outline: none;
 	box-shadow: 0 2px 8px var(--first-color);
 }
-
+.data_droplist:hover {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
 .data_droplist:hover ul {
 	max-height: 200px;
 	background-color: var(--second-color);
