@@ -68,6 +68,7 @@ section ul li {
 	padding: 5px 10px;
 	list-style: none;
 }
+
 .graph {
 	background-color: var(--first-color);
 	grid-area: visual;
@@ -99,6 +100,7 @@ header {
 	background-color: var(--second-color);
 	grid-area: data;
 }
+
 .data_container {
 	height: 100%;
 	display: grid;
@@ -106,7 +108,7 @@ header {
 			auto,
 			150px
 		);
-	grid-template-rows: auto auto 1fr auto;
+	grid-template-rows: auto 2em 1fr 2em;
 	grid-template-areas:
 		'header header header header header header header' 'topDropL . . . . . topDropR'
 		'. table table table table table .' 'bottomDropL . . . . . bottomDropR';
@@ -116,21 +118,44 @@ header {
 	grid-area: header;
 	text-align: center;
 }
+
+.data_container li input {
+	width: 100%;
+}
 .data_droplist,
 .data_btn {
 	padding: 5px 10px;
+	position: relative;
+}
+.data_droplist ul {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-in-out;
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	background-color: white;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.data_droplist:nth-of-type(1) {
+.data_droplist:hover ul {
+	max-height: 200px;
+	background-color: var(--second-color);
+}
+.data_droplist ul li:hover {
+	background-color: #f0f0f0;
+}
+
+.data_droplist:nth-child(2) {
 	grid-area: topDropL;
 }
-.data_droplist:nth-of-type(2) {
+.data_droplist:nth-child(3) {
 	grid-area: topDropR;
 }
 .data_table {
 	grid-area: table;
 }
-.data_droplist:nth-of-type(3) {
+.data_droplist:nth-child(5) {
 	grid-area: bottomDropL;
 }
 .data_btn {
