@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.mjs",
-		"dev": "nodemon -e pug,js,mjs,css --exec node index.mjs",
+		"dev": "nodemon -e pug,js,mjs,css --exec node index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "GitHub: AdamT-S, Athenaparsa, MMadejsza, rhaishah, unaisq1",
