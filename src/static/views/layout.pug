@@ -25,37 +25,35 @@ html(lang="en")
     link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap", rel="stylesheet")
     link(rel="stylesheet", href="../css/style.css")
+    block head
   body
     .wrapper
-      aside.logo Logo
-      nav.nav_bar
-        ul
-          li.nav_item
-            input(type="text", placeholder="Search", class="nav_search")
-          li.nav_item
-            a(href="") Data
-          li.nav_item
-            a(href="") Icon
-
-      block content1
-      
-      block content2
-
-      footer
-        .footer
-          .footer_contact
-            h3 Contact Us
-            input(type="text", placeholder="Your Name")
-            input(type="text", placeholder="Your Email")
-            input(type="text", placeholder="Your Msg")
-            button(type="submit")
-          .footer_siteMap
-            h3 Site Map
-            a(href="") Home
-            a(href="") Data
-            a(href="") About Us
-          .footer_icons
-            .footer_logo Logo
-            .footer_icon i1
-            .footer_icon i2
-            .footer_icon i3
+        aside.logo Logo
+        nav.nav_bar
+            ul
+                li.nav_item
+                    input(type="text", placeholder="Search", class="nav_search")
+                li.nav_item
+                    a(href="") Data
+                li.nav_item
+                    a(href="") Icon
+        block content1
+        block content2
+        footer
+            .footer
+            .footer_contact
+                h3 Contact Us
+                input(type="text", placeholder="Your Name")
+                input(type="text", placeholder="Your Email")
+                input(type="text", placeholder="Your Msg")
+                button(type="submit")
+            .footer_siteMap
+                h3 Site Map
+                a(href="") Home
+                a(href="") Data
+                a(href="") About Us
+            .footer_icons
+                .footer_logo Logo
+                .footer_icon i1
+                .footer_icon i2
+                .footer_icon i3

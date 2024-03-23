@@ -1,51 +1,59 @@
 extends layout.pug
+block head 
+    link(rel="stylesheet", href="../CSS/content.css")
 
 block content1
     section.graph
-            .graph_container
+        .graph_container
             header
                 h1.graph_title Graph
             .graph_content [Content]
             ul.graph_filters
-                li.graph_filter
-                input(type="checkbox", name="continentsCheckbox", id="")
-                | Continents
-                li.graph_filter
-                input(type="checkbox", name="countriesCheckbox", id="")
-                | Countries
-                li.graph_filter
-                input(type="checkbox", name="citiesCheckbox", id="")
-                | Cities
+                li.graph_filter            
+                        input(type="checkbox", name="continentsCheckbox", id="")
+                        | Continents
+                li.graph_filter            
+                        input(type="checkbox", name="countriesCheckbox", id="")
+                        | Countries
+                li.graph_filter  
+                        input(type="checkbox", name="citiesCheckbox", id="")
+                        | Cities
+           
 block content2             
     section.data
-            .data_container
+        .data_container
             header
                 h1.data_title Data:
             .data_droplist
                 | Display:
                 ul
-                li Map
-                li Graph
+                    li Map
+                    li Graph
             .data_droplist
                 | Filter
                 ul
-                li.data_li
-                    input(type="text", placeholder="City", class="data_filter", autocomplete="none")
-                li.data_li
-                    input(type="text", placeholder="Country", class="data_filter", autocomplete="none")
-                li.data_li
-                    input(type="text", placeholder="Continent", class="data_filter", autocomplete="none")
+                    li.data_li
+                        input(type="text", placeholder="City",class="data_filter", autocomplete="none")
+                    li.data_li
+                        input(type="text", placeholder="Country",class="data_filter", autocomplete="none")
+                    li.data_li
+                        input(type="text", placeholder="Continent",class="data_filter", autocomplete="none")
             .data_tableDiv
                 table.data_table
-                tr
-                    th Code
-                    th City
-                    th Population
-                // Your table rows go here
+                    tr
+                        th Code
+                        th City
+                        th Population 
+                    each cityData in cities
+                        tr
+                            td #{cityData.code}
+                            td #{cityData.name}
+                            td #{cityData.population}
+                    
             .data_droplist
                 | Export
                 ul
-                li.data_li JPEG
-                li.data_li PDF
-                li.data_li PNG
+                    li.data_li JPEG
+                    li.data_li PDF
+                    li.data_li PNG
             .data_btn See Database
