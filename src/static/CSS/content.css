@@ -67,29 +67,42 @@ body {
 }
 /* Sections */
 section {
-	padding: 10px;
+	margin-top: 10px;
 }
 section ul li {
 	padding: 5px 10px;
 	list-style: none;
 }
+section header {
+	grid-area: header;
+	font-size: 2.2rem;
+	text-align: center;
+	margin: 20px 0;
+}
 /* Graph Section */
 .graph {
-	background-color: var(--first-color);
 	grid-area: visual;
+}
+.graph_container {
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(7, minmax(auto, 150px));
+	grid-template-rows: auto 3fr 1fr;
+	grid-template-areas:
+		'header header header header header header header'
+		'. content content content content content .' 'filters . . . . . .';
+	justify-content: center;
+	background-color: var(--first-color);
+}
+.graph_content {
+	grid-area: content;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
-header {
-	font-size: 2.2rem;
-	margin: 10px 0;
-}
-.graph_content {
-	flex-basis: 80%;
-}
 .graph_filters {
+	grid-area: filters;
+
 	align-self: flex-start;
 	font-weight: bold;
 }
@@ -115,10 +128,7 @@ header {
 	grid-template-areas:
 		'header header header header header header header' 'topDropL . . . . . topDropR'
 		'. table table table table table .' 'bottomDropL . . . . . bottomDropR';
-}
-
-.data_container header {
-	grid-area: header;
+	justify-content: center;
 	text-align: center;
 }
 
