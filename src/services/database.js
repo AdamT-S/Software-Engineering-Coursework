@@ -11,6 +11,66 @@ export default class Database {
 		return this.conn;
 	}
 
+	async getContinents() {
+		try {
+			const data = [
+				{
+					id: 1,
+					code: 1,
+					name: 'Continent',
+					numberOfCountries: 100,
+					totalPopulation: 2000000,
+				},
+				{
+					id: 2,
+					code: 2,
+					name: 'Continent',
+					numberOfCountries: 200,
+					totalPopulation: 2000000,
+				},
+				{
+					id: 3,
+					code: 3,
+					name: 'Continent',
+					numberOfCountries: 300,
+					totalPopulation: 2000000,
+				},
+				{
+					id: 4,
+					code: 4,
+					name: 'Continent',
+					numberOfCountries: 400,
+					totalPopulation: 2000000,
+				},
+				{
+					id: 4,
+					code: 4,
+					name: 'Continent',
+					numberOfCountries: 500,
+					totalPopulation: 2000000,
+				},
+				{
+					id: 4,
+					code: 4,
+					name: 'Continent',
+					numberOfCountries: 600,
+					totalPopulation: 2000000,
+				},
+				{
+					id: 4,
+					code: 4,
+					name: 'Continent',
+					numberOfCountries: 700,
+					totalPopulation: 2000000,
+				},
+			];
+			return data;
+		} catch (err) {
+			// Handle error...
+			console.error(err);
+			return undefined;
+		}
+	}
 	/* Get a list of all cities */
 	async getCities() {
 		try {

@@ -8,9 +8,9 @@ block head
 block dataContent
     table.data_table            
         tr
-            th Code
-            th City
-            th Population 
+            th Continent
+            th Number Of Countries 
+            th Total Population 
     
             each cityData in cities
                 tr
@@ -18,5 +18,3 @@ block dataContent
                     td 
                         a(href=`/cities/city/${cityData.id}`) #{cityData.name}
                     td #{cityData.population}
-                    
-    

@@ -29,6 +29,15 @@ app.get('/', (req, res) => {
 	res.render('index');
 });
 
+app.get('/continents', async (req, res, next) => {
+	try {
+		const continents = await db.getContinents();
+		res.render('continents', {continents}); // Pass cities as an object
+	} catch (err) {
+		next(err); // Pass error to the next middleware
+	}
+});
+
 app.get('/cities', async (req, res, next) => {
 	try {
 		const cities = await db.getCities();
