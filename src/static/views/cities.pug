@@ -1,8 +1,9 @@
 extends layout.pug
 block head 
     link(rel="stylesheet", href="../CSS/content.css")
+    block cityCss
 
-block content1
+block section1
     section.graph
         .graph_container
             header
@@ -19,7 +20,7 @@ block content1
                         input(type="checkbox", name="citiesCheckbox", id="")
                         | Cities
            
-block content2             
+block section2             
     section.data
         .data_container
             header
@@ -38,17 +39,21 @@ block content2
                         input(type="text", placeholder="Country",class="data_filter", autocomplete="none")
                     li.data_li
                         input(type="text", placeholder="Continent",class="data_filter", autocomplete="none")
-            .data_tableDiv
-                table.data_table
-                    tr
-                        th Code
-                        th City
-                        th Population 
-                    each cityData in cities
-                        tr
-                            td #{cityData.code}
-                            td #{cityData.name}
-                            td #{cityData.population}
+            block dataContent
+                .data_content
+                    table.data_table
+                        
+                            tr
+                                th Code
+                                th City
+                                th Population 
+                        
+                            each cityData in cities
+                                    tr
+                                        td #{cityData.code}
+                                        td 
+                                            a(href=`/cities/city/:${cityData.id}`) #{cityData.name}
+                                        td #{cityData.population}
                     
             .data_droplist
                 | Export

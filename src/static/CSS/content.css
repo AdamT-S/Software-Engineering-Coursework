@@ -1,6 +1,7 @@
 :root {
 	--first-color: #ab9bec;
 	--second-color: #d7d1fb;
+	--shadow-color: #666;
 }
 body {
 	font-size: 1.8rem;
@@ -45,10 +46,17 @@ body {
 }
 .nav_item:nth-child(1) {
 	width: 60%;
+	margin: 2px auto 4px 10px;
 }
 .nav_search {
 	width: 100%;
 	text-align: left;
+	padding-left: 10px;
+}
+
+.nav_search:focus {
+	outline: none;
+	box-shadow: 0 1px 1px var(--first-color);
 }
 
 .nav_item a {
@@ -63,7 +71,8 @@ body {
 	transition: 0.3s ease-in-out;
 }
 .nav_item a:hover {
-	text-shadow: 2px 2px 8px white;
+	text-shadow: 0px 0px 8px var(--shadow-color);
+	text-decoration: underline;
 }
 /* Sections */
 section {
@@ -185,7 +194,7 @@ section header {
 .data_droplist:nth-child(3) {
 	grid-area: topDropR;
 }
-.data_tableDiv {
+.data_content {
 	grid-area: table;
 	margin: 3em 0;
 	padding: 0 10px;
@@ -224,22 +233,38 @@ section header {
 	max-width: 50px;
 	text-align: right;
 }
+.data_table tr a {
+	width: 100px;
+	padding: 0px 10px;
+	display: block;
+	list-style: none;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 500;
+	font-style: italic;
+	color: black;
+	transition: 0.3s ease-in-out;
+}
+.data_table tr a:hover {
+	text-shadow: 0px 0px 8px var(--shadow-color);
+	text-decoration: underline;
+}
 /* Hide the default scrollbar */
-.data_tableDiv::-webkit-scrollbar {
+.data_content::-webkit-scrollbar {
 	display: none;
 }
 
 /* Create a custom scrollbar */
-.data_tableDiv {
+.data_content {
 	scrollbar-width: thin;
 	scrollbar-color: var(--first-color) #f2f2f2;
 }
 
-.data_tableDiv::-webkit-scrollbar-track {
+.data_content::-webkit-scrollbar-track {
 	background-color: #f2f2f2;
 }
 
-.data_tableDiv::-webkit-scrollbar-thumb {
+.data_content::-webkit-scrollbar-thumb {
 	background-color: var(--first-color);
 	border-radius: 10px;
 }

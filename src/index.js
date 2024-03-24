@@ -38,10 +38,13 @@ app.get('/cities', async (req, res, next) => {
 	}
 });
 
-app.get('/cities/:id', async (req, res) => {
-	const cityId = req.params.id;
-	const city = await db.getCity(cityId);
-	return res.render('city', {city});
+app.get('/cities/city/:id', async (req, res, next) => {
+	try {
+		const city = await db.getCity(req.params.id);
+		res.render('city', {city}); // Pass cities as an object
+	} catch (err) {
+		next(err); // Pass error to the next middleware
+	}
 });
 
 // Run server!
