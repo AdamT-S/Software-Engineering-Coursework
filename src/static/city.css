@@ -1,0 +1,32 @@
+:root {
+	--first-color: #ab9bec;
+	--second-color: #d7d1fb;
+	--shadow-color: #666;
+}
+.data_content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h2 {
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.cityDesc {
+	width: 50%;
+	text-align: right;
+}
+
+p {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	margin: 10px 0;
+}
+
+span {
+	margin-right: auto;
+	font-weight: 500;
+}

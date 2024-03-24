@@ -31,7 +31,7 @@ export default class Database {
 	/* Get a particular city by ID, including country information */
 	async getCity(cityId) {
 		try {
-			const city = new City(cityId, 'cityName1', 'CountryCode1', 'District1', 'Population1');
+			const city = new City(cityId, 'cityName', 'CountryCode1', 'District1', 'Population1');
 			return city;
 		} catch (err) {
 			// Handle error...

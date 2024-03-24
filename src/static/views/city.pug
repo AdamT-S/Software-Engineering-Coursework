@@ -1,11 +1,17 @@
 extends cities.pug
 
 block cityCss 
-    link(rel="stylesheet", href="../CSS/city.css")
+    link(rel="stylesheet", href="/city.css")
 
-block dataContent             
-    .data_content
-        h1 #{city.Name}
-        p Country code: #{city.CountryCode}
-        p District: #{city.District}
-        p Population: #{city.Population}
+block dataContent     
+        h2 #{city.name} #{city.id}
+        .cityDesc
+            p 
+                span Country code: 
+                | #{city.countryCode}
+            p 
+                span District: 
+                | #{city.district}
+            p 
+                span Population: 
+                | #{city.population}

@@ -1,6 +1,6 @@
 extends layout.pug
 block head 
-    link(rel="stylesheet", href="../CSS/content.css")
+    link(rel="stylesheet", href="/content.css")
     block cityCss
 
 block section1
@@ -39,8 +39,8 @@ block section2
                         input(type="text", placeholder="Country",class="data_filter", autocomplete="none")
                     li.data_li
                         input(type="text", placeholder="Continent",class="data_filter", autocomplete="none")
-            block dataContent
-                .data_content
+            .data_content
+                block dataContent
                     table.data_table
                         
                             tr
@@ -52,7 +52,7 @@ block section2
                                     tr
                                         td #{cityData.code}
                                         td 
-                                            a(href=`/cities/city/:${cityData.id}`) #{cityData.name}
+                                            a(href=`/cities/city/${cityData.id}`) #{cityData.name}
                                         td #{cityData.population}
                     
             .data_droplist
