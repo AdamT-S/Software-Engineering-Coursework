@@ -74,14 +74,13 @@ input {
 	border-radius: 5px;
 	text-align: left;
 }
+input:focus {
+	outline: none;
+	box-shadow: 0 2px 8px var(--shadow-color);
+}
 .nav_search {
 	width: 100%;
 	padding-left: 10px;
-}
-
-.nav_search:focus {
-	outline: none;
-	box-shadow: 0 1px 1px var(--first-color);
 }
 
 .nav_item a {
@@ -102,6 +101,7 @@ input {
 /* Sections */
 section {
 	margin-top: 10px;
+	padding: 10px;
 }
 section ul {
 	border-bottom-right-radius: 5px;
@@ -120,6 +120,7 @@ section header {
 /* Graph Section */
 .graph {
 	grid-area: visual;
+	background-color: var(--first-color);
 }
 .graph_container {
 	height: 100%;
@@ -130,7 +131,6 @@ section header {
 		'header header header header header header header'
 		'. content content content content content .' 'filters . . . . . .';
 	justify-content: center;
-	background-color: var(--first-color);
 }
 .graph_content {
 	grid-area: content;
@@ -145,7 +145,7 @@ section header {
 	font-weight: bold;
 }
 .graph_filter {
-	padding: 5px 10px;
+	padding: 5px 0;
 }
 .graph_filter input {
 	margin-right: 10px;
@@ -196,10 +196,7 @@ section header {
 	width: 90%;
 	padding-left: 5px;
 }
-.data_droplist ul input:focus {
-	outline: none;
-	box-shadow: 0 2px 8px var(--first-color);
-}
+
 .data_droplist:hover {
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
