@@ -70,10 +70,7 @@ body {
 	color: black;
 	transition: 0.3s ease-in-out;
 }
-.nav_item a:hover {
-	text-shadow: 0px 0px 8px var(--shadow-color);
-	text-decoration: underline;
-}
+
 /* Sections */
 section {
 	margin-top: 10px;
