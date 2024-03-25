@@ -13,8 +13,8 @@ export default class DatabaseService {
     static async connect() {
         const conn = await mysql.createConnection({
             host: process.env.DATABASE_HOST || "localhost",
-            user: "user",
-            password: "password",
+            user: "root",
+            password: "",
             database: "world",
         });
 
@@ -22,7 +22,7 @@ export default class DatabaseService {
     }
 
     /* Get a list of all cities */
-    async getCities() {
+    async getAllCities() {
         try {
             // Fetch cities from database
             const data = await this.conn.execute("SELECT * FROM `city`");
@@ -31,6 +31,33 @@ export default class DatabaseService {
             // Handle error...
             console.error(err);
             return undefined;
+        }
+    }
+
+    async getCities(countryName) {
+        try {
+            const sql = `
+            SELECT city.*
+            FROM city
+            JOIN country ON country.Code = city.CountryCode
+            WHERE country.Name = '${countryName}';
+            `;
+            const [rows, fields] = await this.conn.execute(sql);
+            return rows;
+        } catch (err) {
+            console.error("Error fetching cities by country:", err);
+            return [];
+        }
+    }
+    // SQL statement that updates a city name
+    async  updateCityName(cityId, newName) {
+        try {
+            const sql = `UPDATE city SET Name = '${newName}' WHERE ID = ${cityId}`;
+            const [result] = await this.conn.execute(sql);
+            return result;
+        } catch (err) {
+            console.error("Error updating city name:", err);
+            return false;
         }
     }
 
@@ -62,7 +89,7 @@ export default class DatabaseService {
         city.country = country;
         return city;
     }
-
+    
     /* Delete a city by ID */
     async removeCity(cityId) {
         const res = await this.conn.execute(
@@ -73,10 +100,89 @@ export default class DatabaseService {
     }
 
     /* Get a list of countries */
-    async getCountries() {
+    async getAllCountries() {
         const sql = `SELECT * FROM country`;
         const [rows, fields] = await this.conn.execute(sql);
         const countries = rows.map(c => new Country(c.Code, c.Name, c.Continent, c.Region, c.Population));
         return countries;
+    }
+
+    // SQL statement that updates country name
+    async updateCountryName(countryCode, newName) {
+        try {
+            const sql = `UPDATE country SET Name = '${newName}' WHERE Code = '${countryCode}'`;
+            const [result] = await this.conn.execute(sql);
+            return result;
+        } catch (err) {
+            console.error("Error updating country name:", err);
+            return false;
+        }
+    }
+    
+    // SQL statement that gets all the countries based on a named continent
+    async getCountries(continentName) {
+        try {
+            const sql = `
+            SELECT *
+            FROM country
+            WHERE Continent = '${continentName}';
+            `;
+            const [rows, fields] = await this.conn.execute(sql);
+            return rows;
+        } catch (err) {
+            console.error("Error fetching countries by continent:", err);
+            return [];
+        }
+    }
+
+    // SQL statement that deletes countries
+    async deleteCountry(countryCode) {
+        try {
+            const sql = `DELETE FROM country WHERE Code = '${countryCode}'`;
+            const [result] = await this.conn.execute(sql);
+            return result;
+        } catch (err) {
+            console.error("Error deleting country:", err);
+            return false;
+        }
+    }
+
+    // SQL statement that gets all of the continents
+    async getContinents() {
+        try {
+            const sql = `
+            SELECT DISTINCT Continent
+            FROM country;
+            `;
+            const [rows, fields] = await this.conn.execute(sql);
+            return rows;
+        } catch (err) {
+            console.error("Error fetching continents:", err);
+            return [];
+        }
+    }
+    
+    // SQL statement that deletes continents
+    async deleteContinent(continentName) {
+        try {
+            const sql = `DELETE FROM country WHERE Continent = '${continentName}'`;
+            const [result] = await this.conn.execute(sql);
+            return result;
+        } catch (err) {
+            console.error("Error deleting continent:", err);
+            return false;
+        }
+    }
+    
+    // SQL statement that updates continent name
+    async updateContinentName(oldContinentName, newContinentName) {
+        try {
+            const sql = `UPDATE country SET Continent = '${newContinentName}' WHERE Continent = '${oldContinentName}'`;
+            const [result] = await this.conn.execute(sql);
+            return result;
+        } catch (err) {
+            console.error("Error updating continent name:", err);
+            return false;
+        }
     }
 }
