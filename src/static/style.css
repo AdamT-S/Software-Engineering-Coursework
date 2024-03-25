@@ -69,9 +69,11 @@ body {
 	width: 60%;
 	margin: 2px auto 4px 10px;
 }
-input {
+input,
+textarea {
 	border: 1px solid #999;
 	border-radius: 5px;
+	padding-left: 10px;
 	text-align: left;
 }
 input:focus {
@@ -80,10 +82,9 @@ input:focus {
 }
 .nav_search {
 	width: 100%;
-	padding-left: 10px;
 }
 
-.nav_item a {
+a {
 	width: 100px;
 	padding: 0px 10px;
 	display: block;
@@ -92,9 +93,9 @@ input:focus {
 	text-decoration: none;
 	font-weight: bold;
 	color: black;
-	transition: 0.3s ease-in-out;
+	transition: 0.2s ease-in-out;
 }
-.nav_item a:hover {
+a:hover {
 	text-shadow: 0px 0px 8px var(--shadow-color);
 	text-decoration: underline;
 }
@@ -226,4 +227,81 @@ section header {
 footer {
 	background-color: var(--first-color);
 	grid-area: footer;
+	height: 25vh;
+	padding: 10px;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.footer .flex-col-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 33%;
+}
+.footer_contact {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-evenly;
+	text-align: center;
+}
+
+.footer_contact .data_btn {
+	background-color: var(--second-color);
+	border: 1px solid #999;
+	transition: 0.2s ease-in-out;
+}
+
+.footer_contact .data_btn:hover {
+	text-shadow: 0px 0px 8px var(--shadow-color);
+	text-decoration: underline;
+}
+.footer input,
+textarea,
+a {
+	margin: 8px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	width: 80%;
+}
+.footer_siteMap {
+	width: 33%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+}
+.footer_siteMap * {
+	position: relative;
+}
+.footer_siteMap *::after {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	content: '';
+	display: block;
+	height: 2px;
+	background-color: var(--shadow-color);
+	width: 100px;
+}
+
+.footer_icons {
+	width: 33%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+}
+
+.footer_icons .footer_logo {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: var(--second-color);
+	text-align: center;
+	line-height: 80px;
 }

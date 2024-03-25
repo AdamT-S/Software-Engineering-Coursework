@@ -23,8 +23,11 @@ html(lang="en")
     // Outside styling and links info
     link(rel="preconnect", href="https://fonts.googleapis.com")
     link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    
     link(href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap", rel="stylesheet")
+
     link(rel="stylesheet", href="/style.css")
+
     block head
   body
     .wrapper
@@ -92,14 +95,13 @@ html(lang="en")
                         li.data_li PDF
                         li.data_li PNG
                 .data_btn See Database
-        footer
-            .footer
+        footer.footer
             .footer_contact
                 h3 Contact Us
                 input(type="text", placeholder="Your Name")
                 input(type="text", placeholder="Your Email")
-                input(type="text", placeholder="Your Msg")
-                button(type="submit")
+                textarea(name="", cols="30", rows="10" placeholder="Your Message")
+                button.data_btn(type="submit") Submit
             .footer_siteMap
                 h3 Site Map
                 a(href="") Home
@@ -107,6 +109,7 @@ html(lang="en")
                 a(href="") About Us
             .footer_icons
                 .footer_logo Logo
-                .footer_icon i1
-                .footer_icon i2
-                .footer_icon i3
+                .footer_icon <i class="fa fa-phone" aria-hidden="true"></i>
+                .footer_icon <i class="fa fa-envelope" aria-hidden="true"></i>
+                .footer_icon <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+<script src="https://kit.fontawesome.com/4622d99ad4.js" crossorigin="anonymous"></script>

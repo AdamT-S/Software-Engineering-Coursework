@@ -1,28 +1,27 @@
 extends layout.pug
 block head 
     link(rel="stylesheet", href="/continents.css")
-    block cityCss
+    link(rel="stylesheet", href="/city.css")
 
    
 
 block dataContent
     h2 #{country.name} #{country.id}
-        .cityDesc
+    .cityDesc
             p 
-                span Number of Countries: 
+                span Number of Cities: 
                 | #{country.numberOfCities}
             p 
                 span Total Population: 
                 | #{country.totalPopulation}            
 
-    table.data_table            
-        table.data_table            
+    table.data_table                
         tr
             th Code
             th City
             th Population 
     
-            each cityData in cities
+            each cityData in countryCities
                 tr
                     td #{cityData.code}
                     td 

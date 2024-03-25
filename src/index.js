@@ -37,11 +37,22 @@ app.get('/continents', async (req, res, next) => {
 		next(err); // Pass error to the next middleware
 	}
 });
+
 app.get('/continents/:name', async (req, res, next) => {
 	try {
 		const continent = await db.getContinent(req.params.name);
 		const continentCountries = await db.getCountries(req.params.name);
-		res.render('continent', {continent, continentCountries});
+		res.render('continent_countries', {continent, continentCountries});
+	} catch (err) {
+		next(err); // Pass error to the next middleware
+	}
+});
+
+app.get('/continents/:continent/:countryName', async (req, res, next) => {
+	try {
+		const country = await db.getCountry(req.params.countryName);
+		const countryCities = await db.getCities(req.params.countryName);
+		res.render('country_cities', {country, countryCities});
 	} catch (err) {
 		next(err); // Pass error to the next middleware
 	}

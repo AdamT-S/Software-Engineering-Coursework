@@ -71,12 +71,12 @@ export default class Database {
 			return undefined;
 		}
 	}
-	async getContinent(named) {
+	async getContinent(continentName) {
 		try {
 			const data = {
 				id: 4,
 				code: 4,
-				name: named,
+				name: continentName,
 				numberOfCountries: 600,
 				totalPopulation: 2000000,
 			};
@@ -88,14 +88,66 @@ export default class Database {
 		}
 	}
 	/* Get a list of all countries */
-	async getCountries(name) {
+	async getCountries(continent) {
 		try {
-			const data = [
-				{id: 1, code: 1, name: ' country1', population: 100},
-				{id: 2, code: 2, name: ' country2', population: 200},
-				{id: 3, code: 3, name: ' country3', population: 300},
-				{id: 4, code: 4, name: ' country4', population: 400},
-			];
+			let data;
+			if (!continent) {
+				// all countries
+				data = [
+					{id: 1, code: 1, name: ' country1', numberOfCities: 5, totalPopulation: 100},
+					{id: 2, code: 2, name: ' country2', numberOfCities: 5, totalPopulation: 200},
+					{id: 3, code: 3, name: ' country3', numberOfCities: 5, totalPopulation: 300},
+					{id: 4, code: 4, name: ' country4', numberOfCities: 5, totalPopulation: 400},
+				];
+			} else {
+				// if specified name -> filter
+				data = [
+					{
+						id: 1,
+						code: 1,
+						name: `country1_In_${continent}`,
+						numberOfCities: 5,
+						totalPopulation: 100,
+					},
+					{
+						id: 2,
+						code: 2,
+						name: `country2_In_${continent}`,
+						numberOfCities: 5,
+						totalPopulation: 200,
+					},
+					{
+						id: 3,
+						code: 3,
+						name: `country3_In_${continent}`,
+						numberOfCities: 5,
+						totalPopulation: 300,
+					},
+					{
+						id: 4,
+						code: 4,
+						name: `country4_In_${continent}`,
+						numberOfCities: 5,
+						totalPopulation: 400,
+					},
+				];
+				return data;
+			}
+		} catch (err) {
+			// Handle error...
+			console.error(err);
+			return undefined;
+		}
+	}
+	async getCountry(countryName) {
+		try {
+			const data = {
+				id: 4,
+				code: 4,
+				name: countryName,
+				numberOfCities: 600,
+				totalPopulation: 2000000,
+			};
 			return data;
 		} catch (err) {
 			// Handle error...
@@ -104,14 +156,26 @@ export default class Database {
 		}
 	}
 	/* Get a list of all cities */
-	async getCities() {
+	async getCities(country) {
 		try {
-			const data = [
-				{id: 1, code: 1, name: 'city1', population: 100},
-				{id: 2, code: 2, name: 'city2', population: 200},
-				{id: 3, code: 3, name: 'city3', population: 300},
-				{id: 4, code: 4, name: 'city4', population: 400},
-			];
+			let data;
+			if (!country) {
+				// all cities
+				data = [
+					{id: 1, code: 1, name: 'city1', population: 100},
+					{id: 2, code: 2, name: 'city2', population: 200},
+					{id: 3, code: 3, name: 'city3', population: 300},
+					{id: 4, code: 4, name: 'city4', population: 400},
+				];
+			} else {
+				// if specified name -> filter
+				data = [
+					{id: 1, code: 1, name: `city1_In ${country}`, population: 100},
+					{id: 2, code: 2, name: `city2_In ${country}`, population: 200},
+					{id: 3, code: 3, name: `city3_In ${country}`, population: 300},
+					{id: 4, code: 4, name: `city4_In ${country}`, population: 400},
+				];
+			}
 			return data;
 		} catch (err) {
 			// Handle error...
