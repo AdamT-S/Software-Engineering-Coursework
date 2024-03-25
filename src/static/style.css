@@ -230,11 +230,13 @@ section header {
 footer {
 	background-color: var(--first-color);
 	grid-area: footer;
-	height: 25vh;
+	min-height: 25vh;
+	margin-top: 10px;
 	padding: 10px;
 	display: flex;
 	justify-content: space-evenly;
 }
+
 footer div * {
 	height: 2.5rem;
 	line-height: 2.5rem;
@@ -252,6 +254,7 @@ footer div * {
 	flex-direction: column;
 	justify-content: space-evenly;
 	text-align: center;
+	width: 33%;
 }
 
 .footer_contact .data_btn {
@@ -273,6 +276,7 @@ a {
 	padding-top: 3px;
 	padding-bottom: 3px;
 	width: 80%;
+	max-width: 300px;
 }
 .footer .footer_contact textarea {
 	height: 4.5rem;
