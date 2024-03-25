@@ -76,7 +76,8 @@ textarea {
 	padding-left: 10px;
 	text-align: left;
 }
-input:focus {
+input:focus,
+textarea:focus {
 	outline: none;
 	box-shadow: 0 2px 8px var(--shadow-color);
 }
@@ -94,6 +95,7 @@ a {
 	font-weight: bold;
 	color: black;
 	transition: 0.2s ease-in-out;
+	cursor: pointer;
 }
 a:hover {
 	text-shadow: 0px 0px 8px var(--shadow-color);
@@ -181,6 +183,7 @@ section header {
 	font-weight: bold;
 	border-radius: 5px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
 }
 .data_droplist ul {
 	transition: max-height 0.3s ease-in-out;
@@ -232,7 +235,10 @@ footer {
 	display: flex;
 	justify-content: space-evenly;
 }
-
+footer div * {
+	height: 2.5rem;
+	line-height: 2.5rem;
+}
 .footer .flex-col-center {
 	display: flex;
 	flex-direction: column;
@@ -249,6 +255,8 @@ footer {
 }
 
 .footer_contact .data_btn {
+	width: 150px;
+	padding: 0;
 	background-color: var(--second-color);
 	border: 1px solid #999;
 	transition: 0.2s ease-in-out;
@@ -265,6 +273,9 @@ a {
 	padding-top: 3px;
 	padding-bottom: 3px;
 	width: 80%;
+}
+.footer .footer_contact textarea {
+	height: 4.5rem;
 }
 .footer_siteMap {
 	width: 33%;
