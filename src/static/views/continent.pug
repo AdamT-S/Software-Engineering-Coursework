@@ -1,0 +1,29 @@
+extends layout.pug
+block head 
+    link(rel="stylesheet", href="/continents.css")
+    link(rel="stylesheet", href="/city.css")
+
+   
+
+block dataContent
+    h2 #{continent.name} #{continent.id}
+    .cityDesc
+            p 
+                span Number of Countries: 
+                | #{continent.numberOfCountries}
+            p 
+                span Total Population: 
+                | #{continent.totalPopulation}            
+
+    table.data_table            
+        tr
+            th Country 
+            th Number Of Cities 
+            th Total Population 
+    
+            each country in continentCountries
+                tr
+                    td 
+                        a(href=`/continents/${continent.name}/${country.name}`) #{country.name}
+                    td #{country.numberOfCities}
+                    td #{country.totalPopulation}

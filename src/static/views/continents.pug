@@ -1,0 +1,20 @@
+extends layout.pug
+block head 
+    link(rel="stylesheet", href="/continents.css")
+    block cityCss
+
+   
+
+block dataContent
+    table.data_table            
+        tr
+            th Continent
+            th Number Of Countries 
+            th Total Population 
+    
+        each continent in continents
+                tr
+                    td 
+                        a(href=`/continents/${continent.name}`) #{continent.name}
+                    td #{continent.numberOfCountries}
+                    td #{continent.totalPopulation}

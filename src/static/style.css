@@ -19,3 +19,214 @@ nav {
 	height: 10vh;
 	background-color: var(--second-color);
 }
+:root {
+	--first-color: #ab9bec;
+	--second-color: #d7d1fb;
+	--shadow-color: #666;
+}
+body {
+	font-size: 1.8rem;
+}
+.wrapper {
+	max-width: 1920px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(4, minmax(100px, 1fr));
+	grid-template-rows: 10vh minmax(auto, 80vh) 80vh 20vh;
+	grid-template-areas:
+		'logo . nav nav'
+		'visual visual visual visual'
+		'data data data data'
+		'footer footer footer footer';
+	background-color: var(--second-color);
+}
+/* Logo */
+.logo {
+	grid-area: logo;
+	text-align: center;
+	line-height: 10vh;
+	font-weight: bold;
+}
+/* Navigation */
+.nav_bar {
+	grid-area: nav;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--second-color);
+}
+.nav_bar ul {
+	height: 30px;
+	width: 95%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--first-color);
+	list-style: none;
+	border-radius: 5px;
+}
+.nav_item:nth-child(1) {
+	width: 60%;
+	margin: 2px auto 4px 10px;
+}
+input {
+	border: 1px solid #999;
+	border-radius: 5px;
+	text-align: left;
+}
+.nav_search {
+	width: 100%;
+	padding-left: 10px;
+}
+
+.nav_search:focus {
+	outline: none;
+	box-shadow: 0 1px 1px var(--first-color);
+}
+
+.nav_item a {
+	width: 100px;
+	padding: 0px 10px;
+	display: block;
+	list-style: none;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+	transition: 0.3s ease-in-out;
+}
+.nav_item a:hover {
+	text-shadow: 0px 0px 8px var(--shadow-color);
+	text-decoration: underline;
+}
+/* Sections */
+section {
+	margin-top: 10px;
+}
+section ul {
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+section ul li {
+	padding: 5px 10px;
+	list-style: none;
+}
+section header {
+	grid-area: header;
+	font-size: 2.2rem;
+	text-align: center;
+	margin: 20px 0;
+}
+/* Graph Section */
+.graph {
+	grid-area: visual;
+}
+.graph_container {
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(7, minmax(auto, 150px));
+	grid-template-rows: auto 3fr 1fr;
+	grid-template-areas:
+		'header header header header header header header'
+		'. content content content content content .' 'filters . . . . . .';
+	justify-content: center;
+	background-color: var(--first-color);
+}
+.graph_content {
+	grid-area: content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.graph_filters {
+	grid-area: filters;
+
+	align-self: flex-start;
+	font-weight: bold;
+}
+.graph_filter {
+	padding: 5px 10px;
+}
+.graph_filter input {
+	margin-right: 10px;
+}
+
+/* Data Section */
+
+.data {
+	background-color: var(--second-color);
+	grid-area: data;
+	margin-bottom: 10px;
+}
+
+.data_container {
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(7, minmax(auto, 150px));
+	grid-template-rows: auto 2em 1fr 2em;
+	grid-template-areas:
+		'header header header header header header header' 'topDropL . . . . . topDropR'
+		'. table table table table table .' 'bottomDropL . . . . . bottomDropR';
+	justify-content: center;
+	text-align: center;
+}
+
+.data_droplist,
+.data_btn {
+	padding: 5px 10px;
+	position: relative;
+	background-color: var(--first-color);
+	text-align: center;
+	font-weight: bold;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.data_droplist ul {
+	transition: max-height 0.3s ease-in-out;
+	max-height: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	font-weight: normal;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.data_droplist ul input {
+	width: 90%;
+	padding-left: 5px;
+}
+.data_droplist ul input:focus {
+	outline: none;
+	box-shadow: 0 2px 8px var(--first-color);
+}
+.data_droplist:hover {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.data_droplist:hover ul {
+	max-height: 200px;
+	background-color: var(--second-color);
+}
+.data_droplist ul li:hover {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.data_droplist:nth-child(2) {
+	grid-area: topDropL;
+}
+.data_droplist:nth-child(3) {
+	grid-area: topDropR;
+}
+
+.data_droplist:nth-child(5) {
+	grid-area: bottomDropL;
+}
+.data_btn {
+	grid-area: bottomDropR;
+}
+
+footer {
+	background-color: var(--first-color);
+	grid-area: footer;
+}

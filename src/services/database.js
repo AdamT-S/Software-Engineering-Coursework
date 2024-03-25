@@ -17,52 +17,84 @@ export default class Database {
 				{
 					id: 1,
 					code: 1,
-					name: 'Continent',
+					name: 'Continent1',
 					numberOfCountries: 100,
 					totalPopulation: 2000000,
 				},
 				{
 					id: 2,
 					code: 2,
-					name: 'Continent',
+					name: 'Continent2',
 					numberOfCountries: 200,
 					totalPopulation: 2000000,
 				},
 				{
 					id: 3,
 					code: 3,
-					name: 'Continent',
+					name: 'Continent3',
 					numberOfCountries: 300,
 					totalPopulation: 2000000,
 				},
 				{
 					id: 4,
 					code: 4,
-					name: 'Continent',
+					name: 'Continent4',
 					numberOfCountries: 400,
 					totalPopulation: 2000000,
 				},
 				{
 					id: 4,
 					code: 4,
-					name: 'Continent',
+					name: 'Continent5',
 					numberOfCountries: 500,
 					totalPopulation: 2000000,
 				},
 				{
 					id: 4,
 					code: 4,
-					name: 'Continent',
+					name: 'Continent6',
 					numberOfCountries: 600,
 					totalPopulation: 2000000,
 				},
 				{
 					id: 4,
 					code: 4,
-					name: 'Continent',
+					name: 'Continent7',
 					numberOfCountries: 700,
 					totalPopulation: 2000000,
 				},
+			];
+			return data;
+		} catch (err) {
+			// Handle error...
+			console.error(err);
+			return undefined;
+		}
+	}
+	async getContinent(named) {
+		try {
+			const data = {
+				id: 4,
+				code: 4,
+				name: named,
+				numberOfCountries: 600,
+				totalPopulation: 2000000,
+			};
+			return data;
+		} catch (err) {
+			// Handle error...
+			console.error(err);
+			return undefined;
+		}
+	}
+	/* Get a list of all countries */
+	async getCountries(name) {
+		try {
+			const data = [
+				{id: 1, code: 1, name: ' country1', population: 100},
+				{id: 2, code: 2, name: ' country2', population: 200},
+				{id: 3, code: 3, name: ' country3', population: 300},
+				{id: 4, code: 4, name: ' country4', population: 400},
 			];
 			return data;
 		} catch (err) {
@@ -99,7 +131,4 @@ export default class Database {
 			return undefined;
 		}
 	}
-
-	/* Get a list of countries */
-	async getCountries() {}
 }
