@@ -98,6 +98,10 @@ export default class Database {
 					{id: 2, code: 2, name: ' country2', numberOfCities: 5, totalPopulation: 200},
 					{id: 3, code: 3, name: ' country3', numberOfCities: 5, totalPopulation: 300},
 					{id: 4, code: 4, name: ' country4', numberOfCities: 5, totalPopulation: 400},
+					{id: 4, code: 4, name: ' country4', numberOfCities: 5, totalPopulation: 400},
+					{id: 4, code: 4, name: ' country4', numberOfCities: 5, totalPopulation: 400},
+					{id: 4, code: 4, name: ' country4', numberOfCities: 5, totalPopulation: 400},
+					{id: 4, code: 4, name: ' country4', numberOfCities: 5, totalPopulation: 400},
 				];
 			} else {
 				// if specified name -> filter
@@ -122,6 +126,34 @@ export default class Database {
 						name: `country3_In_${continent}`,
 						numberOfCities: 5,
 						totalPopulation: 300,
+					},
+					{
+						id: 4,
+						code: 4,
+						name: `country4_In_${continent}`,
+						numberOfCities: 5,
+						totalPopulation: 400,
+					},
+					{
+						id: 4,
+						code: 4,
+						name: `country4_In_${continent}`,
+						numberOfCities: 5,
+						totalPopulation: 400,
+					},
+					{
+						id: 4,
+						code: 4,
+						name: `country4_In_${continent}`,
+						numberOfCities: 5,
+						totalPopulation: 400,
+					},
+					{
+						id: 4,
+						code: 4,
+						name: `country4_In_${continent}`,
+						numberOfCities: 5,
+						totalPopulation: 400,
 					},
 					{
 						id: 4,
@@ -166,6 +198,13 @@ export default class Database {
 					{id: 2, code: 2, name: 'city2', population: 200},
 					{id: 3, code: 3, name: 'city3', population: 300},
 					{id: 4, code: 4, name: 'city4', population: 400},
+					{id: 4, code: 4, name: 'city4', population: 400},
+					{id: 4, code: 4, name: 'city4', population: 400},
+					{id: 4, code: 4, name: 'city4', population: 400},
+					{id: 4, code: 4, name: 'city4', population: 400},
+					{id: 4, code: 4, name: 'city4', population: 400},
+					{id: 4, code: 4, name: 'city4', population: 400},
+					{id: 4, code: 4, name: 'city4', population: 400},
 				];
 			} else {
 				// if specified name -> filter
@@ -173,6 +212,10 @@ export default class Database {
 					{id: 1, code: 1, name: `city1_In ${country}`, population: 100},
 					{id: 2, code: 2, name: `city2_In ${country}`, population: 200},
 					{id: 3, code: 3, name: `city3_In ${country}`, population: 300},
+					{id: 4, code: 4, name: `city4_In ${country}`, population: 400},
+					{id: 4, code: 4, name: `city4_In ${country}`, population: 400},
+					{id: 4, code: 4, name: `city4_In ${country}`, population: 400},
+					{id: 4, code: 4, name: `city4_In ${country}`, population: 400},
 					{id: 4, code: 4, name: `city4_In ${country}`, population: 400},
 				];
 			}

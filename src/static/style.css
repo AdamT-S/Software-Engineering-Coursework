@@ -75,9 +75,11 @@ textarea {
 	border-radius: 5px;
 	padding-left: 10px;
 	text-align: left;
+	font-family: inherit;
 }
 input:focus,
-textarea:focus {
+textarea:focus,
+button {
 	outline: none;
 	box-shadow: 0 2px 8px var(--shadow-color);
 }

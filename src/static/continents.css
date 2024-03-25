@@ -1,9 +1,5 @@
 .data_content {
 	grid-area: table;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-evenly;
 	margin: 3em 0;
 	padding: 0 10px;
 	overflow-y: auto;
@@ -21,9 +17,7 @@
 	position: sticky; /* Make the header sticky */
 	top: 0;
 	z-index: 2;
-	text-align: center;
 	background-color: var(--second-color);
-	padding: 0 5px;
 }
 
 .data_table tr + tr:hover {
@@ -35,13 +29,14 @@
 .data_table tr:nth-child(2n + 2) {
 	background-color: rgba(0, 0, 0, 0.05);
 }
-.data_table tr td {
+.data_table tr * {
 	text-align: center;
 }
-.data_table tr td a {
-	width: 100%;
+.data_table tr a {
+	white-space: nowrap;
 	padding: 0px 10px;
 	display: block;
+	margin: 3px auto;
 	list-style: none;
 	text-align: center;
 	text-decoration: none;
@@ -53,4 +48,25 @@
 .data_table tr a:hover {
 	text-shadow: 0px 0px 8px var(--shadow-color);
 	text-decoration: underline;
+}
+
+/* Hide the default scrollbar */
+.data_content ::-webkit-scrollbar {
+	display: none;
+}
+
+/* Create a custom scrollbar */
+.data_content {
+	scrollbar-width: thin;
+	scrollbar-color: var(--first-color) #f2f2f2;
+	overflow-y: auto;
+}
+
+.data_content ::-webkit-scrollbar-track {
+	background-color: #f2f2f2;
+}
+
+.data_content ::-webkit-scrollbar-thumb {
+	background-color: var(--first-color);
+	border-radius: 10px;
 }

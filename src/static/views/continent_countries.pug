@@ -1,6 +1,7 @@
 extends layout.pug
 block head 
     link(rel="stylesheet", href="/continents.css")
+    link(rel="stylesheet", href="/cities.css")
     link(rel="stylesheet", href="/city.css")
 
    
@@ -21,7 +22,7 @@ block dataContent
             th Number Of Cities 
             th Total Population 
     
-            each country in continentCountries
+        each country in continentCountries
                 tr
                     td 
                         a(href=`/continents/${continent.name}/${country.name}`) #{country.name}
