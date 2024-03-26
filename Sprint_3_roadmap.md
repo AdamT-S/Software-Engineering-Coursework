@@ -1,6 +1,6 @@
-#Sprint 3 Roadmap
+# Sprint 3 Roadmap
 
-##The sprint 3 roadmap has been designed in order to allow this group to have a good understanding of the upcoming plan for the work.
+## The sprint 3 roadmap has been designed in order to allow this group to have a good understanding of the upcoming plan for the work.
 
 This sprint will start off with the Scrum master and product owner allocation. (This will be documented seperately)
 The beginning of this coursework is to design a static background in html based on the wireframe we produced in sprint 3. This documentation is very important as it allows team members to have a central point that they can work towards.
