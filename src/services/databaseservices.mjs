@@ -144,7 +144,7 @@ export default class DatabaseService {
     }
 
      // SQL statement that gets a country based on it's name
-     async getCountries(countryName) {
+     async getCountryName(countryName) {
         try {
             const sql = `
             SELECT country.Name, COUNT(city.ID) As "Number_of_cities", country.Population
