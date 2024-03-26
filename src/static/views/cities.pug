@@ -12,11 +12,11 @@ block dataContent
             th City
             th Population 
     
-            each cityData in cities
+            each city in cities
                 tr
-                    td #{cityData.code}
+                    td #{city.CountryCode}
                     td 
-                        a(href=`/cities/city/${cityData.id}`) #{cityData.name}
-                    td #{cityData.population}
+                        a(href=`/cities/city/${city.ID}`) #{city.Name}
+                    td #{city.Population}
                     
     

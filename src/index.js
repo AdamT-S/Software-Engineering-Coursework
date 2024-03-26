@@ -61,7 +61,7 @@ app.get('/continents/:continent/:countryName', async (req, res, next) => {
 
 app.get('/cities', async (req, res, next) => {
 	try {
-		const cities = await db.getCities();
+		const [cities, fields] = await db.getCities();
 		res.render('cities', {cities}); // Pass cities as an object
 	} catch (err) {
 		next(err); // Pass error to the next middleware
