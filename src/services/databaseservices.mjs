@@ -143,6 +143,23 @@ export default class DatabaseService {
         }
     }
 
+     // SQL statement that gets a country based on it's name
+     async getCountries(countryName) {
+        try {
+            const sql = `
+            SELECT country.Name, COUNT(city.ID) As "Number_of_cities", country.Population
+            FROM country, city
+            WHERE country.Code = city.CountryCode AND AND country.Name =  "${countryName}"
+            GROUP BY country.Name
+            `;
+            const [rows, fields] = await this.conn.execute(sql);
+            return rows;
+        } catch (err) {
+            console.error("Error fetching countries by continent:", err);
+            return [];
+        }
+    }
+
     // SQL statement that deletes countries
     async deleteCountry(countryCode) {
         try {
