@@ -166,7 +166,7 @@ export default class DatabaseService {
     async getContinent(Continent) {
         try {
             const sql = `
-            SELECT Continent, SUM(country.Population) AS Population
+            SELECT Continent, SUM(country.Population) AS Population, COUNT(country.Code) AS countries
             FROM country
             WHERE Continent = ${Continent}
             GROUP BY Continent
