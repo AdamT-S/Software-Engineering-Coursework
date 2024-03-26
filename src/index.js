@@ -1,7 +1,7 @@
 /* Import dependencies */
 import express from 'express';
 import path from 'path';
-import Database from './services/database.js';
+import DatabaseService from './services/database_services.mjs';
 import {fileURLToPath} from 'url';
 import {dirname} from 'path';
 
@@ -22,7 +22,8 @@ app.set('views', path.join(__dirname, './static/views'));
 // Serve assets from 'static' folder
 app.use(express.static('static'));
 
-const db = await Database.connect();
+const db = await DatabaseService.connect();
+const {conn} = db;
 
 /* Landing route */
 app.get('/', (req, res) => {
