@@ -20,12 +20,13 @@ block dataContent
                     td #{continent.Population}
 block adjustmentButtons
     .data_droplist
-        | Delete
-        ul
-            li.data_li
-                input(type="text", placeholder="City",class="data_filter", autocomplete="none")
-            li.data_li
-                input(type="text", placeholder="Country",class="data_filter", autocomplete="none")
-            li.data_li
-                input(type="text", placeholder="Continent",class="data_filter", autocomplete="none")
+            | Delete
+            form(action="/submit-form", method="GET")
+                ul
+                    li.data_li
+                        input(type="text", name="cityDelete", placeholder="City ID", class="data_filter", autocomplete="none")
+                    li.data_li
+                        input(type="text", name="countryDelete", placeholder="Country", class="data_filter", autocomplete="none")
+                    li.data_li
+                        button.data_btn(type="submit") Submit
     .data_btn See Database

@@ -4,6 +4,7 @@ import path from 'path';
 import DatabaseService from './services/databaseservices.mjs';
 import {fileURLToPath} from 'url';
 import {dirname} from 'path';
+import {} from 'module';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -28,6 +29,9 @@ const {conn} = db;
 /* Landing route */
 app.get('/', (req, res) => {
 	res.render('index');
+});
+app.get('/login', (req, res) => {
+	res.render('login');
 });
 
 app.get('/continents', async (req, res, next) => {
@@ -82,6 +86,22 @@ app.get('/cities/city/:id', async (req, res, next) => {
 	}
 });
 
+// Handle form submission
+app.get('/submit-form', async (req, res, next) => {
+	try {
+		const check = (name) => {
+			if (name != '') return true;
+			else return false;
+		};
+		const city = req.query.cityDelete; // Get city input value
+		const country = req.query.countryDelete; // Get country input value
+
+		db.removeCity(check(city));
+		db.deleteCountry(check(country));
+	} catch (err) {
+		next(err); // Pass error to the next middleware
+	}
+});
 // Run server!
 app.listen(port, () => {
 	console.log(`Server running on port ${port}`);

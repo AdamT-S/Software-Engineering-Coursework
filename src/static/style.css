@@ -83,6 +83,9 @@ button {
 	outline: none;
 	box-shadow: 0 2px 8px var(--shadow-color);
 }
+button {
+	border: none;
+}
 .nav_search {
 	width: 100%;
 }
