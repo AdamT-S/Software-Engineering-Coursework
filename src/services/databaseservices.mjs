@@ -86,7 +86,13 @@ export default class DatabaseService {
             data.Region,
             data.CountryPopulation
         );
+        const continent = new Continent(
+            data.Continent,
+            data.Population,
+            data.NumberOfCountries
+        );
         city.country = country;
+        country.continent = continent;
         return city;
     }
     
