@@ -161,9 +161,9 @@ export default class DatabaseService {
     }
 
     // SQL statement that deletes countries
-    async deleteCountry(countryCode) {
+    async deleteCountry(countryName) {
         try {
-            const sql = `DELETE FROM country WHERE Code = '${countryCode}'`;
+            const sql = `DELETE FROM country WHERE name = '${countryName}'`;
             const [result] = await this.conn.execute(sql);
             return result;
         } catch (err) {
@@ -201,17 +201,6 @@ export default class DatabaseService {
         } catch (err) {
             console.error("Error fetching continents:", err);
             return [];
-        }
-    }
-    // SQL statement that deletes continents
-    async deleteContinent(continentName) {
-        try {
-            const sql = `DELETE FROM country WHERE Continent = '${continentName}'`;
-            const [result] = await this.conn.execute(sql);
-            return result;
-        } catch (err) {
-            console.error("Error deleting continent:", err);
-            return false;
         }
     }
     
