@@ -90,12 +90,13 @@ app.get('/cities/city/:id', async (req, res, next) => {
 app.get('/submit-form', async (req, res, next) => {
 	try {
 		const city = req.query.cityDelete; // Get city input value
-		const country = req.query.countryDelete; // Get country input value
+		const countryCode = req.query.countryDeleteCode; // Get country input value
+		const countryName = req.query.countryDeleteName; // Get country input value
 		if (city != '') {
-			db.removeCity(city);
+			db.deleteCity(city);
 		}
-		if (country != '') {
-			db.removeCity(country);
+		if (countryCode != '' && countryName != '') {
+			db.deleteCountry(countryName, countryCode);
 		}
 	} catch (err) {
 		next(err); // Pass error to the next middleware
