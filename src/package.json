@@ -12,7 +12,7 @@
 	"author": "GitHub: AdamT-S, Athenaparsa, MMadejsza, rhaishah, unaisq1",
 	"license": "ISC",
 	"dependencies": {
-		"express": "^4.19.1",
+		"express": "^4.19.2",
 		"mysql2": "^3.9.2",
 		"pug": "^3.0.2"
 	},
