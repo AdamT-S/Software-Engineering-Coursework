@@ -162,6 +162,21 @@ export default class DatabaseService {
         }
     }
     
+    async getContinent(Continent) {
+        try {
+            const sql = `
+            SELECT Continent, SUM(country.Population) AS Population
+            FROM country
+            WHERE Continent = ${Continent}
+            GROUP BY Continent
+            `;
+            const [rows, fields] = await this.conn.execute(sql);
+            return rows;
+        } catch (err) {
+            console.error("Error fetching continents:", err);
+            return [];
+        }
+    }
     // SQL statement that deletes continents
     async deleteContinent(continentName) {
         try {
