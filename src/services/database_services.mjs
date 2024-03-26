@@ -77,6 +77,7 @@ export default class DatabaseService {
         FROM country
         WHERE country.Continent = ${Continent}
         `;
+        return country;
     }
 
     /* Delete a city by ID */
@@ -102,5 +103,12 @@ export default class DatabaseService {
         const [rows, fields] = await this.conn.execute(sql);
         const countries = rows.map(c => new Country(c.Code, c.Name, c.Continent, c.Region, c.Population));
         return countries;
+    }
+
+    async getContinent(){
+        const sql = `SELECT Continent
+        FROM country
+        GROUP BY Continent `;
+        return Continent
     }
 }
