@@ -1,78 +1,82 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #d7d1fb;
-  background-size: cover;
-  background-position: Center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #d7d1fb;
+    background-size: cover;
+    background-position: Center;
 }
 
 .wrapper {
-  position: relative;
-  height: 480px;
-  width: 440px;
-  background-color: #b4a1fd;
-  border: 2px solid rgba(255, 255, 255, 5);
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    height: 480px;
+    width: 440px;
+    background-color: #b4a1fd;
+    border: 2px solid rgba(255, 255, 255, 5);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper .from-box {
-  width: 150%;
-  padding: 40%;
+    width: 150%;
+    padding: 40%;
 }
 .from-box h2 {
-  font-size: 2.5em;
-  color: rgb(245, 245, 245);
-  text-align: center;
+    font-size: 2.5em;
+    color: rgb(245, 245, 245);
+    text-align: center;
 }
 .input-box {
-  position: relative;
-  width: 150px;
-  height: 50px;
-  border-bottom: 1px solid;
-  margin: 40px 0;
+    position: relative;
+    width: 150px;
+    /* height: 50px; /
+    border-bottom: 1px solid;
+    margin: 40px 0;
 }
 .input-box label {
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  transform: translateY(-50%);
-  font-size: 1em;
-  color: black;
-  font-weight: 500;
-  pointer-events: none;
-  transition: 0.5s;
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    pointer-events: none;
+    transition: 0.5s;
 }
 .input-box input:focus ~ label,
 .input-box input:focus ~ label {
-  top: -5px;
+    top: -5px;
 }
 
 .input-box input {
-  width: 150%;
-  height: 80%;
-  position: center;
-  border: none;
-  outline: none;
-  font-size: 1em;
-  color: black;
-  font-weight: 600px;
-  padding: 0 35px 0 5px;
+    width: 150%;
+    / height: 80%; */
+    position: relative;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    font-weight: 600px;
+    padding: 0 35px 0 5px;
 }
 .input-box .icon {
-  position: absolute;
-  right: 1px;
-  font-size: 1.2em;
+    margin-right: 5px;
+    position: absolute;
+    right: 100%;
+    font-size: 1.2em;
+    z-index: 2;
 }
 .remember-forget {
-  font-size: 0.9em;
-  color: black;
-  font-weight: 500;
-  margin: -15px 0 15px;
-  display: flex;
-  justify-content: space-between;
+    width: 80%;
+    font-size: 0.9em;
+    color: black;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
