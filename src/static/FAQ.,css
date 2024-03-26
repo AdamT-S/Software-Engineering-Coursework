@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+section {
+  width: 100%;
+  background-color: #886ef2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.accordion-item {
+  background-color: white;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0.5rem 2px rgba(0, 0, 0, 0.5);
+}
+
+.accordion-link {
+  font-size: 1.6rem;
+  color: black;
+  font-weight: 300;
+  text-decoration: none;
+  background-color: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.accordion-link .ion-add-outline,
+.accordion-link .ion-remove-outline {
+  color: #e7d5ff;
+  padding: 0.5rem;
+}
+
+.hide {
+  display: none;
+}
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: #b8adfd;
+  transition: max-height 650ms;
+}
+.answer::before {
+  content: "";
+  position: absolute;
+  width: 0.6rem;
+  height: 90%;
+  background-color: aquamarine;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.answer p {
+  font-size: 1.4rem;
+  color: black;
+}
+.accordion-item:target .answer {
+  max-height: 20rem;
+}
+
+.accordion-item:target .accordion-link .ion-add-outline {
+  display: none;
+}
+header {
+  text-align: center;
+  font-size: large;
+  color: white;
+  margin-bottom: 2rem;
+}
