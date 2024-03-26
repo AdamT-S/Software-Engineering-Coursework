@@ -7,14 +7,14 @@ block head
    
 
 block dataContent
-    h2 #{continent.name} #{continent.id}
+    h2 #{continent.Continent} 
     .cityDesc
             p 
                 span Number of Countries: 
-                | #{continent.numberOfCountries}
+                | #{continent.countries}
             p 
                 span Total Population: 
-                | #{continent.totalPopulation}            
+                | #{continent.Population}            
 
     table.data_table            
         tr
@@ -25,6 +25,6 @@ block dataContent
         each country in continentCountries
                 tr
                     td 
-                        a(href=`/continents/${continent.name}/${country.name}`) #{country.name}
-                    td #{country.numberOfCities}
-                    td #{country.totalPopulation}
+                        a(href=`/continents/${continent.Continent}/${country.Name}`) #{country.Name}
+                    td #{country.Number_of_cities}
+                    td #{country.Population}

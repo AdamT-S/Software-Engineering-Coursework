@@ -150,7 +150,7 @@ section header {
 	font-weight: bold;
 }
 .graph_filter {
-	padding: 5px 0;
+	padding: 5px 10px;
 }
 .graph_filter input {
 	margin-right: 10px;

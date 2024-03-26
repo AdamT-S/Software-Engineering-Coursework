@@ -6,14 +6,14 @@ block head
    
 
 block dataContent
-    h2 #{country.name} #{country.id}
+    h2 #{country[0].Name}
     .cityDesc
             p 
                 span Number of Cities: 
-                | #{country.numberOfCities}
+                | #{country[0].Number_of_cities}
             p 
                 span Total Population: 
-                | #{country.totalPopulation}            
+                | #{country[0].Population}            
 
     table.data_table                
         tr
@@ -23,7 +23,7 @@ block dataContent
     
             each cityData in countryCities
                 tr
-                    td #{cityData.code}
+                    td #{cityData.CountryCode}
                     td 
-                        a(href=`/cities/city/${cityData.id}`) #{cityData.name}
-                    td #{cityData.population}
+                        a(href=`/cities/city/${cityData.ID}`) #{cityData.Name}
+                    td #{cityData.Population}

@@ -1,7 +1,7 @@
 /* Import dependencies */
 import express from 'express';
 import path from 'path';
-import DatabaseService from './services/database_services.mjs';
+import DatabaseService from './services/databaseservices.mjs';
 import {fileURLToPath} from 'url';
 import {dirname} from 'path';
 
@@ -41,9 +41,12 @@ app.get('/continents', async (req, res, next) => {
 
 app.get('/continents/:name', async (req, res, next) => {
 	try {
-		const continent = await db.getContinent(req.params.name);
+		let name = req.params.name.replaceAll('%20', '');
+		const [continent, fields] = await db.getContinent(req.params.name);
 		const continentCountries = await db.getCountries(req.params.name);
 		res.render('continent_countries', {continent, continentCountries});
+		console.log(`continent ${continentCountries[0]}`);
+		// console.log(`continentCountries ${continentCountries}`);
 	} catch (err) {
 		next(err); // Pass error to the next middleware
 	}
@@ -51,8 +54,10 @@ app.get('/continents/:name', async (req, res, next) => {
 
 app.get('/continents/:continent/:countryName', async (req, res, next) => {
 	try {
-		const country = await db.getCountry(req.params.countryName);
-		const countryCities = await db.getCities(req.params.countryName);
+		let name = req.params.countryName.replaceAll('%20', '');
+		const country = await db.getCountryName(name);
+		const countryCities = await db.getCities(name);
+		console.log(countryCities);
 		res.render('country_cities', {country, countryCities});
 	} catch (err) {
 		next(err); // Pass error to the next middleware
@@ -61,7 +66,7 @@ app.get('/continents/:continent/:countryName', async (req, res, next) => {
 
 app.get('/cities', async (req, res, next) => {
 	try {
-		const [cities, fields] = await db.getCities();
+		const [cities, fields] = await db.getAllCities();
 		res.render('cities', {cities}); // Pass cities as an object
 	} catch (err) {
 		next(err); // Pass error to the next middleware
