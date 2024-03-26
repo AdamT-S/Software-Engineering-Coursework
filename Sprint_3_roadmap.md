@@ -12,6 +12,6 @@ any features in the dynamic buttons, it will be added to a seperate page that wi
 Once the features have been implemented, Travis CI will be used for testing and will be used to help review the functionality of the code.
 
 Other miscellaneous tasks that need to be done are:
--Create Documentation that will help the team understand the coursework
--Alter suggested documentation from the Sprint 2 coursework review
--Review wireframe and make some final changes before implementation
+- Create Documentation that will help the team understand the coursework
+- Alter suggested documentation from the Sprint 2 coursework review
+- Review wireframe and make some final changes before implementation
