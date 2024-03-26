@@ -168,7 +168,7 @@ export default class DatabaseService {
             const sql = `
             SELECT Continent, SUM(country.Population) AS Population, COUNT(country.Code) AS countries
             FROM country
-            WHERE Continent = ${Continent}
+            WHERE Continent = "${Continent}"
             GROUP BY Continent
             `;
             const [rows, fields] = await this.conn.execute(sql);
