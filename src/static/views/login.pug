@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Log in & registration
+    link(rel="stylesheet", href="styles.css")
+  body
+    header
+      .wrapper
+        .from-box.login
+          h2 Welcome
+          form(action="#")
+            .input-box
+              span.icon
+                ion-icon(name="mail-outline")
+              input(type="email", required)
+              label Email
+            .input-box
+              span.icon
+                ion-icon(name="lock-closed-outline")
+              input(type="password", required)
+              label Password
+              .remember-forget
+                label
+                  input(type="checkbox") Remember me
+                  |  Remember me
+                a(href="#") Forget Password?
+              button.btn(type="submit") login
+              .login-register
+          p
+            | Don't have an account?
+            a.registerlink(href="#") Register
+    script(src="script.js")
+    script(type="module", src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js")
+    script(nomodule, src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js")
