@@ -130,9 +130,10 @@ export default class DatabaseService {
     async getCountries(continentName) {
         try {
             const sql = `
-            SELECT *
-            FROM country
-            WHERE Continent = '${continentName}';
+            SELECT country.Name, COUNT(city.ID) As "Number_of_cities", country.Population
+            FROM country, city
+            WHERE country.Code = city.CountryCode AND continent = "${continentName}"
+            GROUP BY country.Name
             `;
             const [rows, fields] = await this.conn.execute(sql);
             return rows;
