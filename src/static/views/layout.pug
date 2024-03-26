@@ -87,14 +87,14 @@ html(lang="en")
                                             td 
                                                 a(href=`/cities/city/${cityData.id}`) #{cityData.name}
                                             td #{cityData.population}
-                        
-                .data_droplist
-                    | Export
-                    ul
-                        li.data_li JPEG
-                        li.data_li PDF
-                        li.data_li PNG
-                .data_btn See Database
+                block adjustmentButtons        
+                    .data_droplist
+                        | Export
+                        ul
+                            li.data_li JPEG
+                            li.data_li PDF
+                            li.data_li PNG
+                    .data_btn See Database
         footer.footer
             .footer_contact
                 h3 Contact Us

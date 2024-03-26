@@ -18,3 +18,14 @@ block dataContent
                         a(href=`/continents/${continent.Continent}`) #{continent.Continent}
                     td #{continent.countries}
                     td #{continent.Population}
+block adjustmentButtons
+    .data_droplist
+        | Delete
+        ul
+            li.data_li
+                input(type="text", placeholder="City",class="data_filter", autocomplete="none")
+            li.data_li
+                input(type="text", placeholder="Country",class="data_filter", autocomplete="none")
+            li.data_li
+                input(type="text", placeholder="Continent",class="data_filter", autocomplete="none")
+    .data_btn See Database
