@@ -151,8 +151,9 @@ export default class DatabaseService {
     async getContinents() {
         try {
             const sql = `
-            SELECT DISTINCT Continent
-            FROM country;
+            SELECT Continent, SUM(country.Population) AS Population
+            FROM country
+            GROUP BY Continent
             `;
             const [rows, fields] = await this.conn.execute(sql);
             return rows;
