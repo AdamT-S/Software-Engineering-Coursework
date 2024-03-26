@@ -89,15 +89,14 @@ app.get('/cities/city/:id', async (req, res, next) => {
 // Handle form submission
 app.get('/submit-form', async (req, res, next) => {
 	try {
-		const check = (name) => {
-			if (name != '') return true;
-			else return false;
-		};
 		const city = req.query.cityDelete; // Get city input value
 		const country = req.query.countryDelete; // Get country input value
-
-		db.removeCity(check(city));
-		db.deleteCountry(check(country));
+		if (city != '') {
+			db.removeCity(city);
+		}
+		if (country != '') {
+			db.removeCity(country);
+		}
 	} catch (err) {
 		next(err); // Pass error to the next middleware
 	}
