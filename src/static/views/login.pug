@@ -3,7 +3,8 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Log in & registration
+    title Log in
+    link(rel="stylesheet", href="style.css")
     link(rel="stylesheet", href="login.css")
   body
     header
@@ -21,13 +22,13 @@ html(lang="en")
                 ion-icon(name="lock-closed-outline")
               input(type="password", required)
               label Password
-              .remember-forget
+            .remember-forget
                 label
-                  input(type="checkbox") Remember me
-                  |  Remember me
+                  input(type="checkbox")
+                  | Remember me
                 a(href="#") Forget Password?
-              button.btn(type="submit") login
-              .login-register
+            button.btn(type="submit") login
+            .login-register
           p
             | Don't have an account?
             a.registerlink(href="#") Register
