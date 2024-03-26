@@ -98,7 +98,7 @@ export default class DatabaseService {
     }
     
     /* Delete a city by ID */
-    async removeCity(cityId) {
+    async deleteCity(cityId) {
         const res = await this.conn.execute(
             `DELETE FROM city WHERE id = ${cityId}`
         );
@@ -161,9 +161,11 @@ export default class DatabaseService {
     }
 
     // SQL statement that deletes countries
-    async deleteCountry(countryName) {
+    async deleteCountry(countryName, countryCode) {
         try {
-            const sql = `DELETE FROM country WHERE name = '${countryName}'`;
+            const sql = `DELETE FROM city WHERE CountryCode = "${countryCode}";
+                        DELETE FROM countrylanguage WHERE CountryCode = "${countryCode}";
+                        DELETE FROM country WHERE Name = "${countryName}";'`;
             const [result] = await this.conn.execute(sql);
             return result;
         } catch (err) {
