@@ -71,7 +71,12 @@ export default class DatabaseService {
         FROM country
         WHERE country.Continent = ${Continent}
         `;
+<<<<<<< HEAD
 	}
+=======
+        return country;
+    }
+>>>>>>> origin/frontend_layout
 
 	/* Delete a city by ID */
 	async removeCity(cityId) {
@@ -86,6 +91,7 @@ export default class DatabaseService {
 		return res;
 	}
 
+<<<<<<< HEAD
 	/* Get a list of countries */
 	async getCountries() {
 		const sql = `SELECT * FROM country`;
@@ -96,3 +102,20 @@ export default class DatabaseService {
 		return countries;
 	}
 }
+=======
+    /* Get a list of countries */
+    async getCountries() {
+        const sql = `SELECT * FROM country`;
+        const [rows, fields] = await this.conn.execute(sql);
+        const countries = rows.map(c => new Country(c.Code, c.Name, c.Continent, c.Region, c.Population));
+        return countries;
+    }
+
+    async getContinent(){
+        const sql = `SELECT Continent
+        FROM country
+        GROUP BY Continent `;
+        return Continent
+    }
+}
+>>>>>>> origin/frontend_layout
