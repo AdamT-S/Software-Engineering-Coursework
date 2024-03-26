@@ -27,6 +27,7 @@ html(lang="en")
     link(href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap", rel="stylesheet")
 
     link(rel="stylesheet", href="/style.css")
+    link(rel="stylesheet", href="/FAQ.css")
 
     block head
   body
@@ -55,59 +56,36 @@ html(lang="en")
                     li.graph_filter  
                             input(type="checkbox", name="citiesCheckbox", id="")
                             | Cities
-           
+             
         section.data
-           .data_container
-                doctype html
-html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title FAQ
-    link(rel='stylesheet', href='FAQ.css')
-  body
-    section
-      .container
-        header
-          h1 Frequently Asked Questions
-        .accordion
-          each questionId in ['question1', 'question2', 'question3', 'question4']
-            .accordion-item(id=questionId)
-              a.accordion-link(href=`#${questionId}`)
-                p
-                  if questionId === 'question1'
-                    | How do I sign up?
-                  else if questionId === 'question2'
-                    | Can I have a list of cities?
-                  else if questionId === 'question3'
-                    | Can I have access to database?
-                  else if questionId === 'question4'
-                    | Can I see all the continents?
-                ion-icon(name='add-outline')
-                ion-icon(name='remove-outline', class='hide')
-              .answer
-                p
-                  if questionId === 'question1'
-                    | Simply click on the user icon on the top right corner of the page
-                  else if questionId === 'question2'
-                    | Yes you can have it on data page
-                  else if questionId === 'question3'
-                    | Only Admins can have access to database
-                  else if questionId === 'question4'
-                    | Yes You can see them on Data page
-    // Ionicons Script
-    script(type='module', src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js')
-    script(nomodule, src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js')
-    // JavaScript to toggle icon visibility
-    script.
-      const accordionLinks = document.querySelectorAll(".accordion-link");
-      accordionLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          link.querySelector(".ion-add-outline").classList.toggle("hide");
-          link.querySelector(".ion-remove-outline").classList.toggle("hide");
-          link.nextElementSibling.classList.toggle("show");
-        });
-      });
+          .data_container
+            header
+              h1 Frequently Asked Questions
+            
+            each questionId in ['question1', 'question2', 'question3', 'question4']
+                .accordion-item(id=questionId)
+                  a.accordion-link(href=`#${questionId}`)
+                    p
+                      if questionId === 'question1'
+                        | How do I sign up?
+                      else if questionId === 'question2'
+                        | Can I have a list of cities?
+                      else if questionId === 'question3'
+                        | Can I have access to database?
+                      else if questionId === 'question4'
+                        | Can I see all the continents?
+                    ion-icon(name='add-outline')
+                    ion-icon(name='remove-outline', class='hide')
+                  .answer
+                    p
+                      if questionId === 'question1'
+                        | Simply click on the user icon on the top right corner of the page
+                      else if questionId === 'question2'
+                        | Yes you can have it on data page
+                      else if questionId === 'question3'
+                        | Only Admins can have access to database
+                      else if questionId === 'question4'
+                        | Yes You can see them on Data page
 
 
         footer.footer
@@ -131,3 +109,16 @@ html(lang='en')
                 .footer_icon 
                     a(href="") <i class="fa fa-linkedin-square" aria-hidden="true"></i>
 <script src="https://kit.fontawesome.com/4622d99ad4.js" crossorigin="anonymous"></script>
+// Ionicons Script
+script(type='module', src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js')
+script(nomodule, src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js')
+        // JavaScript to toggle icon visibility
+script.
+  const accordionLinks = document.querySelectorAll(".accordion-link");
+  accordionLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+              link.querySelector(".ion-add-outline").classList.toggle("hide");
+              link.querySelector(".ion-remove-outline").classList.toggle("hide");
+              link.nextElementSibling.classList.toggle("show");
+            });
+          });
