@@ -1,5 +1,6 @@
 import mysql from "mysql2/promise";
 import City from "../models/city.mjs";
+import Continent from "../models/continent.mjs";
 import Country from "../models/country.mjs";
 
 export default class DatabaseService {
