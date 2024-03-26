@@ -149,7 +149,7 @@ export default class DatabaseService {
             const sql = `
             SELECT country.Name, COUNT(city.ID) As "Number_of_cities", country.Population
             FROM country, city
-            WHERE country.Code = city.CountryCode AND AND country.Name =  "${countryName}"
+            WHERE country.Code = city.CountryCode AND country.Name =  "${countryName}"
             GROUP BY country.Name
             `;
             const [rows, fields] = await this.conn.execute(sql);
